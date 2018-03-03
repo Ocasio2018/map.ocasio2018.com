@@ -1,0 +1,181 @@
+#show-hide-map, .show-hide-buttons { display: none; }
+@media(max-width: 600px) {
+  body {
+    .title-item {
+      text-align: center;
+    }
+    #show-hide-map {
+      display: block;
+      .show-map { display: block; }
+      .show-list { display: block; }
+    }
+
+    .show-hide-buttons {
+      display: flex; padding: 20px 0 0;
+      #show-map, #show-list {
+        border-radius: 0;
+        text-transform: uppercase;
+        font-size: 13px;
+        flex-grow: 1;
+        border: none;
+        padding-top: 10px;
+
+        &:focus {
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
+      }
+
+      #show-map { background-color: transparent; color: white; }
+      #show-list { background-color: $aqua; color: black;}
+    }
+
+    #stage div#activity-area #events-list-container #events-list.events {
+      scroll-behavior: smooth;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      li.event-obj {
+        overflow: hidden;
+        width: 100%;
+      }
+    }
+
+    &.map-view {
+      #show-hide-map .show-list { display: block; }
+      #show-hide-map .show-map { display: block; }
+
+
+      #show-list  { background-color: transparent; color: white; }
+      #show-map { background-color: $aqua; color: black;}
+
+      div#activity-area {
+        width: 100%;
+
+        section#map {
+          // visibility: visible !important;
+          // display: block !important;
+          visibility: visible !important;
+          z-index: 100 !important;
+          // display: block !important;
+          // opacity: 1 !important;
+          // z-index: 1000 !important;
+          // display: block;
+        }
+        section#events-list-container  #events-list{
+          display: none !important;
+          visibility: hidden !important;
+        }
+      }
+    }
+
+    div#stage {
+      display: flex;
+      flex-direction: column;
+
+      header.page-header {
+        height: auto;
+        padding: 5px 5px 0;
+        border-bottom: 4px solid $aqua;
+        nav {
+          display: flex;
+          flex-direction: column;
+          border-bottom: none;
+
+          div.logo-area {
+            text-align: center;
+            width: 100%;
+          }
+          div.filters-form-area {
+            padding-top: 0;
+            padding: 0 10px 0px;
+            .input-text {
+              background-color: none;
+              margin-top: 10px;
+              span.twitter-typeahead {
+                display: block;
+                flex-grow: 1;
+                flex: 0 1 100%;
+              }
+              div.search-button {
+                flex-grow: 0;
+              }
+            }
+
+            .filter-area {
+              flex-direction: column;
+            div.filter-container {
+                display: flex;
+                margin: 0;
+                margin-top: 10px;
+                padding: 0;
+
+                span {
+                  display: block;
+                  flex: 0 0 50%;
+                  text-align: left;
+                  margin: 0;
+                  margin-left: 10px;
+                  label {
+                    display: inline-block;
+                    max-width: calc(100% - 50px);
+                    font-size: 14px;
+                  }
+                }
+              }
+            }
+            // div.search-button {
+            //   display: none;
+            // }
+            button#show-hide-map {
+              margin-top: 10px;
+              // position: absolute;
+              // right: 16px;
+              // top: 24px;
+            }
+          }
+
+          div.cta-area {
+            width: 100%;
+            text-align: center;
+            p { font-size: 14px; font-weight: bold; color: gray; }
+            display: none;
+
+          }
+        }
+      }
+
+      div#activity-area {
+        flex-grow: 1;
+        display: flex;
+        // height: 100%;
+        position: relative;
+        section#map {
+          visibility: hidden;
+          z-index: -1;
+          // opacity: 1;
+          // height: 100%;
+          position: absolute !important;
+          width: 100%;
+          height: calc(100% - 120px);
+          bottom: 0;
+          left: 0;
+        }
+
+        section#events-list-container {
+          visibility: visible;
+          border-left: none;
+          width: 100%;
+          header.events-header {
+            font-size: 24px;
+            padding-top: 5px;
+          }
+
+          .event-obj {
+            overflow: hidden;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

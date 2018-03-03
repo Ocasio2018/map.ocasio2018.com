@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WomensMarch.com Map</title>
+
+  <meta charset="utf-8" />
+  <meta name='google-site-verification' content='' />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="Women's March">
+  <meta name="keywords" content="Women's March">
+  <meta property="og:image" content="[Women's March Map Image]" />
+  <meta property="og:url" content="map.WomensMarch.com" />
+  <meta property="og:title" content="WomensMarch.com Map"/>
+  <meta property="og:description" content="WomensMarch.com Map"/>
+
+  <link rel="canonical" href="https://map.WomensMarch.com">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:site" content="https://map.WomensMarch.com">
+  <meta property="twitter:site:id" content="111">
+  <meta property="twitter:author" content="womensmarch">
+  <meta property="twitter:description" content="WomensMarch.com Map">
+  <meta property="twitter:title" content="WomensMarch.com Map">
+  <meta property="twitter:image" content="https://map.WomensMarch.com/img/social.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
+
+  <!-- inject:css -->
+  <!-- endinject -->
+</head>
+
+<!--[if lte IE 9]>
+       <meta http-equiv="refresh" content="0; url=https://www.WomensMarch.com" />
+<![endif]-->
+<body class='header-heavy'>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1682756452019911";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <div id='stage'>
+    <div id='title-area'>
+      <div id='title-container'>
+        <div class='title-item'><a href='http://powertothepolls.com/anniversary' target='_blank'>Power to the Polls Events</a></div>
+        <nav>
+
+        </nav>
+      </div>
+    </div>
+    <div id='activity-area'>
+      <section id='map'>
+      </section>
+      <section id='events-list-container'>
+
+        <header class='page-header'>
+          <nav>
+            <div class='filters-form-area'>
+              <form id="filters-form">
+                <input type='hidden' name='lang' value='en'/>
+                <div class='row'>
+                  <div class='col-md-12 input-text search-wrapper'>
+                    <input type="text"
+                          class="form-control typeahead"
+                          name='loc'
+                          placeholder="City, State, or Country"
+                          data-provider="typeahead"
+                          autocomplete="off"
+                      >
+                    <input type='hidden' name='key' />
+                    <input type='hidden' name='lng' />
+                    <input type='hidden' name='lat' />
+                    <input type='hidden' name='bound1' />
+                    <input type='hidden' name='bound2' />
+                    <div class='search-button'>
+                      <button
+                        class='btn btn-tertiary'
+                      >Search</button>
+                    </div>
+                  </div>
+                </div>
+                <div class='row'>
+                  <div class='col-md-12 show-hide-buttons'>
+
+                    <button class="btn btn-primary" id="show-list">
+                      <span class="show-list"><i class="fa fa-list" aria-hidden="true"></i> List View</span>
+                    </button>
+
+                    <button class="btn btn-primary" id="show-map">
+                      <span class="show-map"><i class="fa fa-map-marker" aria-hidden="true"></i> Map View</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="row" style="display: none;">
+                  <div class='col-md-12 filter-area'>
+                    <div class='filter-container'>
+                      <span class='filter-item'>
+                        <input type='checkbox' name='filter[]' id='events' value='events' checked/>
+                        <label for='events'
+                            data-lang-target='text'
+                            data-lang-key='show-events'
+                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                      </span>
+                      <span class='filter-item'>
+                        <input type='checkbox' name='filter[]' id='groups' value='groups' checked/>
+                        <label for='groups'
+                        data-lang-target='text'
+                        data-lang-key='show-groups'
+                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                      </span>
+                    </div>
+
+                    <button class='btn btn-primary' id="show-hide-map">
+                      <span class='show-map' data-lang-target='text'
+                      data-lang-key='map-view'></span>
+                      <span class='show-list' data-lang-target='text'
+                      data-lang-key='list-view'></span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </nav>
+        </header>
+
+        <div id='events-list'>
+          <ul>
+            <li>
+              <div class='type-event'>
+                <ul class='event-types-list'>
+                  <li>Event Type 1</li>
+                  <li>Event Type 2</li>
+                </ul>
+                <h2><a href='/'>Action 1</a></h2>
+                <h4>Friday &bull; October 27, 2017</h4>
+                <div class='address-area'>
+                  <p>Location Name</p>
+                  <p>1234 Address Lane</p>
+                  <p>Denver, CO 80219</p>
+                </div>
+                <div class='call-to-action'>
+                  <a href='#' class='btn btn-primary'>RSVP</a>
+                </div>
+              </div>
+            </li>
+            <!-- Type Events -->
+            <li>
+              <div class='type-event'>
+                <ul class='event-types-list'>
+                  <li>Event Type 1</li>
+                  <li>Event Type 2</li>
+                </ul>
+                <h2><a href='/'>Action 2</a></h2>
+                <h4>Friday &bull; October 27, 2017</h4>
+                <div class='address-area'>
+                  <p>Location Name</p>
+                  <p>1234 Address Lane</p>
+                  <p>Denver, CO 80219</p>
+                </div>
+                <div class='call-to-action'>
+                  <a href='#' class='btn btn-primary'>RSVP</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!--aside id='embed-area'>
+          <button class='btn more-items'>
+            <i class="fa fa-chevron-up" aria-hidden="true"></i>
+          </button>
+          <div class='viewport'>
+            <div class='content'>
+              <h4>Embed this map</h4>
+              <p>Click the clipboard to copy</p>
+              <div id='embed-form'>
+                <input type='text' name='embed'/>
+                <button class='btn btn-info'><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+        </aside -->
+      </section>
+    </div>
+  </div>
+
+  <!-- inject:js -->
+  <!-- endinject -->
+
+  <script type='text/javascript' src=''></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <!-- script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLlxWn3yInmPEUT4zPV9PBX7n5ZkHxKvM&callback=window.initializeAutocompleteCallback"
+    async defer></script -->
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLv_aHYN7rW5rR5jc9WQ5mbYU1oB-xd9c&callback=window.initializeAutocompleteCallback"
+    async defer></script>
+<!-- SOCIAL -->
+<!-- Twitter -->
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111614454-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111614454-1');
+</script>
+
+
+</body>
+</html>

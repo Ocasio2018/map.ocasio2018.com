@@ -1,0 +1,70 @@
+#embed-area {
+  width: 100%;
+  position: relative;
+  button.btn.more-items {
+    position: absolute;
+    top: -38px;
+    right: 15px;
+    color: white;
+<<<<<<< HEAD
+    background-color: lightgray;
+    border-radius: 0.25rem 0.25rem 0 0;
+    cursor: pointer;
+    outline: 0;
+    &:focus { outline: none !important; }
+    i { color: #333; transition: transform 0.5s; }
+=======
+    background-color: #1081e8;
+    border-radius: 0.25rem 0.25rem 0 0;
+    cursor: pointer;
+
+    i { transition: transform 0.5s; }
+>>>>>>> develop
+  }
+  button { cursor: pointer; }
+
+  div.viewport {
+    max-height: 0;
+    transition: max-height 0.5s;
+    div.content {
+<<<<<<< HEAD
+      background-color: lightgray;
+=======
+      background-color: #1081e8;
+>>>>>>> develop
+      width: 100%;
+      padding: 10px;
+
+      h4 {
+<<<<<<< HEAD
+        color: #333333;
+        font-weight: bold;
+      }
+
+      p { padding: 0; color: #333333;}
+=======
+        color: white;
+        font-weight: bold;
+      }
+
+      p { padding: 0; color: white;}
+>>>>>>> develop
+
+      #embed-form {
+        display: flex;
+        input[name='embed'] {
+          flex-grow: 1;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+
+  &.open {
+    i.fa-chevron-up { transform: rotate(180deg); }
+    div.viewport {
+      max-height: 200px;
+    }
+  }
+}
