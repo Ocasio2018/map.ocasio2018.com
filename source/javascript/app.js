@@ -194,7 +194,7 @@ let mapManager;
     url: 'http://map.justicedemocrats.com/api/events?candidate=alexandria-ocasio-cortez', //'|**DATA_SOURCE**|',
     dataType: 'json',
     success: (data) => {
-      console.log(data);
+      // console.log(data);
       var parameters = queryManager.getParameters();
       var targetData = data.map((item)=>{
         return {
@@ -254,7 +254,7 @@ let mapManager;
 
             // }
           // });
-          console.log(district_boundary);
+          // console.log(district_boundary);
           mapManager.getMap()
             .fitBounds(district_boundary.getBounds(), { animate: false });
           district_boundary.bringToBack();

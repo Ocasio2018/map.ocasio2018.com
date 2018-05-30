@@ -202,8 +202,9 @@ gulp.task('export', function() {
     "distributionId": process.env.CLOUDFRONT_ID
   }
 
+  console.log(AWS);
   gulp.src('./map/**')
-    .pipe(s3(AWS))
-    .pipe(cloudfront(AWS));
+    .pipe(s3(AWS));
+  //   .pipe(cloudfront(AWS));
 
 })

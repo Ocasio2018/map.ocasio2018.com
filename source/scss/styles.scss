@@ -23,6 +23,9 @@ a {
   text-align: right;
   float: right;
   margin-top: 20px;
+  @media(max-width: 600px) {
+    display: none;
+  }
 }
 #events-count {
   color: white;
@@ -31,14 +34,14 @@ a {
   margin-top: 20px;
   opacity: 0;
   transition: opacity 0.4s;
-  font-family: Verdana, sans-serif;
+  font-family: Roboto, sans-serif;
 
   @media(max-width: 600px) {
     display: none;
   }
 }
 .btn.btn-primary {
-  font-family: open sans, sans-serif;
+  font-family: Roboto, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 1px;
@@ -68,7 +71,7 @@ a {
   border-radius: 3px;
   padding: 5px 10px;
   background-color: transparent;
-  font-family: Open sans, sans-serif;
+  font-family: Roboto, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: $purple;
@@ -148,7 +151,7 @@ a {
   background-color: $purple;
   border-color: $purple;
   color: white;
-  font-family: Open Sans, sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: 700;
 
   font-size: 12px;
@@ -180,7 +183,7 @@ a {
         flex-direction: row;
     }
     div.title-item {
-      font-family: Verdana, sans-serif;
+      font-family: Roboto, sans-serif;
       font-size: 31px;
       padding: 10px 10px 10px;
       color: white;
