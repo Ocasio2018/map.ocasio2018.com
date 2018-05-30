@@ -10,7 +10,7 @@
   font-style: normal; }
 
 @font-face {
-  font-family: Drone Ranger;
+  font-family: Verdana;
   src: url(/fonts/DroneRanger01.ttf) format("truetype");
   font-weight: 400;
   font-style: normal; }
@@ -37,13 +37,19 @@ a {
     color: #0046c3;
     text-decoration: none; }
 
+#page-title {
+  text-align: right;
+  float: right;
+  margin-top: 20px; }
+
 #events-count {
+  color: white;
   display: inline-block;
   float: right;
   margin-top: 20px;
   opacity: 0;
   transition: opacity 0.4s;
-  font-family: 'Drone Ranger', sans-serif; }
+  font-family: Verdana, sans-serif; }
   @media (max-width: 600px) {
     #events-count {
       display: none; } }
@@ -69,6 +75,7 @@ a {
     margin-top: 4px; }
 
 .btn.btn-secondary {
+  background-color: transparent;
   border: 1px solid;
   border-radius: 3px;
   padding: 5px 10px;
@@ -76,13 +83,13 @@ a {
   font-family: Open sans, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  color: #223544;
-  border-color: #223544;
+  color: #57257D;
+  border-color: #57257D;
   font-size: 12px; }
   .btn.btn-secondary:hover {
     border-color: transparent;
-    background-color: #f1615c;
-    color: #F6ECCA; }
+    background-color: #57257D;
+    color: white; }
 
 .popup-item .event-date {
   position: absolute;
@@ -113,9 +120,9 @@ a {
       color: #333333 !important; }
 
 .btn.btn-tertiary {
-  background-color: #223544;
-  border-color: #223544;
-  color: #F6ECCA;
+  background-color: #57257D;
+  border-color: #57257D;
+  color: white;
   font-family: Open Sans, sans-serif;
   font-weight: 700;
   font-size: 12px;
@@ -131,7 +138,7 @@ a {
   flex-direction: column; }
   #stage header.page-header {
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
-    background-color: #f1615c;
+    background-color: #a7a7a7;
     padding: 1.5em;
     border-bottom: 1px solid rgba(0, 0, 0, 0.13);
     z-index: 10;
@@ -219,15 +226,15 @@ a {
           font-size: 25px;
           margin-top: 10px; }
   #stage div#title-area {
-    background-color: #F6ECCA; }
+    background-color: #57257D; }
     #stage div#title-area div#title-container {
       display: flex;
       flex-direction: row; }
     #stage div#title-area div.title-item {
-      font-family: Drone Ranger, sans-serif;
+      font-family: Verdana, sans-serif;
       font-size: 31px;
       padding: 10px 10px 10px;
-      color: #213444;
+      color: white;
       flex-grow: 1;
       box-shadow: -3px 5px 6px rgba(0, 0, 0, 0.1);
       z-index: 10;
@@ -322,12 +329,12 @@ a {
           z-index: 1;
           margin-bottom: 5px; }
         #stage div#activity-area section#map div.leaflet-popup div.leaflet-popup-content div.type-event h2 {
-          font-family: Drone Ranger, sans-serif;
+          font-family: Verdana, sans-serif;
           font-size: 22px; }
           #stage div#activity-area section#map div.leaflet-popup div.leaflet-popup-content div.type-event h2 a {
             color: #223544; }
             #stage div#activity-area section#map div.leaflet-popup div.leaflet-popup-content div.type-event h2 a:hover {
-              color: #f1615c; }
+              color: #57257D; }
         #stage div#activity-area section#map div.leaflet-popup div.leaflet-popup-content div.type-group div.group-details-area {
           margin-bottom: 5px; }
         #stage div#activity-area section#map div.leaflet-popup div.leaflet-popup-content div.type-group h2:after {
@@ -444,12 +451,12 @@ a {
             z-index: 1;
             margin-bottom: 5px; }
           #stage div#activity-area section#events-list-container div#events-list > ul > li div.type-event h2 {
-            font-family: Drone Ranger, sans-serif;
+            font-family: Verdana, sans-serif;
             font-size: 22px; }
             #stage div#activity-area section#events-list-container div#events-list > ul > li div.type-event h2 a {
               color: #223544; }
               #stage div#activity-area section#events-list-container div#events-list > ul > li div.type-event h2 a:hover {
-                color: #f1615c; }
+                color: #57257D; }
           #stage div#activity-area section#events-list-container div#events-list > ul > li div.type-group div.group-details-area {
             margin-bottom: 5px; }
           #stage div#activity-area section#events-list-container div#events-list > ul > li div.type-group h2:after {
@@ -504,7 +511,7 @@ a {
       #stage div#activity-area #embed-area.open div.viewport {
         max-height: 200px; }
     #stage div#activity-area #events-list-container #events-list {
-      background-color: #F6ECCA; }
+      background-color: whitesmoke; }
       #stage div#activity-area #events-list-container #events-list ul li {
         display: none; }
       #stage div#activity-area #events-list-container #events-list.groups li.group-obj {

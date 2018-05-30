@@ -3,20 +3,22 @@ const MapManager = (($) => {
   let LANGUAGE = 'en';
   var mapMarker;
   const wmIcon = L.icon({
-      iconUrl: '/img/wm-marker.png',
+      iconUrl: '/img/ocasio-marker.png',
       iconSize: [30, 41],
       iconAnchor: [15, 41],
       popupAnchor: [-3, -76],
-      shadowUrl: '/img/wm-marker-shadow.png',
+      shadowUrl: '/img/ocasio-marker-shadow.png',
       shadowSize: [43, 19],
       shadowAnchor: [15, 19]
   });
 
   const renderEvent = (item) => {
     var gmtDate = new Date(item.start_datetime).toGMTString();
-    var date = moment(new Date(gmtDate)).utc().format(new Date(item.start_datetime).getHours() == 0 ? "dddd MMM DD"  : "dddd MMM DD, h:mma");
+    var date = moment(new Date(gmtDate)).format(new Date(item.start_datetime).getHours() == 0 ? "dddd MMM DD"  : "dddd MMM DD, h:mma");
 
     let url = item.url.match(/^https{0,1}:/) ? item.url : "//" + item.url;
+
+
     return `
     <div class='popup-item ${item.event_type}' data-lat='${item.lat}' data-lng='${item.lng}'>
       <div class="type-event type-action">
@@ -24,9 +26,6 @@ const MapManager = (($) => {
         <div class="event-date date" style="display: ${!item.start_datetime ? 'none' : 'block'}">${date}</div>
         <div class="event-address address-area">
           <p>${item.venue}</p>
-        </div>
-        <div class="event-address address-area" style='display: ${url == '//' ? 'block' : 'none'}'>
-          <p>${item.description}</p>
         </div>
         <div class="call-to-action" style='display: ${url == '//' ? 'none' : 'block'}'>
           <a href="${url}" target='_blank' class="btn btn-secondary rsvp">RSVP</a>
@@ -161,6 +160,7 @@ https://docs.google.com/document/d/1KWkLNNeIOeFEiVWMNwoYKu1yAZRUDf78xIbI1ie7Dvs/
             callback();
         }
       },
+      getMap: () => map,
       setBounds: (bounds1, bounds2) => {
         const bounds = [bounds1, bounds2];
         map.fitBounds(bounds);
@@ -239,7 +239,7 @@ https://docs.google.com/document/d/1KWkLNNeIOeFEiVWMNwoYKu1yAZRUDf78xIbI1ie7Dvs/
               const eventType = feature.properties.eventProperties.event_type;
               var geojsonMarkerOptions = {
                   radius: 6,
-                  fillColor:  eventType && eventType.toLowerCase() === 'group' ? "#40D7D4" : "#ef4134",
+                  fillColor:  eventType && eventType.toLowerCase() === 'group' ? "#40D7D4" : "#572582",
                   color: "white",
                   weight: 4,
                   opacity: 0.5,

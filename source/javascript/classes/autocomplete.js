@@ -5,7 +5,7 @@ const AutocompleteManager = (function($) {
 
   return (target) => {
 
-    const API_KEY = "AIzaSyCLlxWn3yInmPEUT4zPV9PBX7n5ZkHxKvM";
+    const API_KEY = "AIzaSyDC2NuGE75jrukj3dtGRJ2TEGDfKdeA18Q";
     const targetItem = typeof target == "string" ? document.querySelector(target) : target;
     const queryMgr = QueryManager();
     var geocoder = new google.maps.Geocoder();

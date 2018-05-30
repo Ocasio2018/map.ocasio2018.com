@@ -6,10 +6,13 @@ const ListManager = (($) => {
 
     const renderEvent = (item) => {
       var gmtDate = new Date(item.start_datetime).toGMTString();
-      var date = moment(new Date(gmtDate)).utc().format(new Date(item.start_datetime).getHours() == 0 ? "dddd MMM DD" : "dddd MMM DD, h:mma");
+      var date = moment(new Date(gmtDate)).format(new Date(item.start_datetime).getHours() == 0 ? "dddd MMM DD" : "dddd MMM DD, h:mma");
 
       // console.log(date, new Date(item.start_datetime), new Date(item.start_datetime).toGMTString())
       let url = item.url.match(/^https{0,1}:/) ? item.url : "//" + item.url;
+
+
+
       return `
       <li class='${item.event_type} event-obj within-bound' data-lat='${item.lat}' data-lng='${item.lng}'>
         <div class="type-event type-action">
@@ -17,9 +20,6 @@ const ListManager = (($) => {
           <div class="event-date date" style="display: ${!item.start_datetime ? 'none' : 'block'}">${date}</div>
           <div class="event-address address-area">
             <p>${item.venue}</p>
-          </div>
-          <div class="event-address address-area" style='display: ${url == '//' ? 'block' : 'none'}'>
-            <p>${item.description}</p>
           </div>
           <div class="call-to-action" style='display: ${url == '//' ? 'none' : 'block'}'>
             <a href="${url == '//' ? 'javascript: void(null)' : url}" target='_blank' class="btn btn-secondary rsvp">RSVP</a>

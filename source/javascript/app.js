@@ -191,14 +191,27 @@ let mapManager;
 
   // console.log(window.EVENTS_URL || 'https://d2hh11l1aj2kg1.cloudfront.net/data/womensmarch.js.gz');
   $.ajax({
-    url: window.EVENTS_URL || 'https://d2hh11l1aj2kg1.cloudfront.net/data/womensmarch.js.gz', //'|**DATA_SOURCE**|',
-    dataType: 'script',
+    url: 'http://map.justicedemocrats.com/api/events?candidate=alexandria-ocasio-cortez', //'|**DATA_SOURCE**|',
+    dataType: 'json',
     success: (data) => {
-
+      console.log(data);
       var parameters = queryManager.getParameters();
-      var targetData = window.EVENTS_DATA;
+      var targetData = data.map((item)=>{
+        return {
+            lat: item.location.location.latitude,
+            event_type: item.type,
+            supergroup: "Ocasio for US Congress",
+            start_datetime: item.start_date,
+            tz: "EST",
+            venue: item.location.venue + [item.location.address_lines.join( ), item.location.locality, item.location.region, item.location.postal_code].join(" "),
+            lng: item.location.location.longitude,
+            url: item.browser_url,
+            title: item.title,
+            group: null
+        };
+      });
 
-      $('#events-count').text(`${window.EVENTS_DATA.length} Walkouts and Counting`).css('opacity', 1);
+      // $('#events-count').text(`${window.EVENTS_DATA.length} Walkouts and Counting`).css('opacity', 1);
 
 
       targetData.forEach((item) => {
@@ -220,6 +233,33 @@ let mapManager;
         $(document).trigger('trigger-list-filter-by-bound', p);
         //console.log(queryManager.getParameters())
       }, 100);
+
+
+      var district_boundary = new L.geoJson(null, {
+        clickable: false
+      });
+      district_boundary.addTo(mapManager.getMap());
+      $.ajax({
+        dataType: "json",
+        url: "/data/NY-14.json",
+        success: function(data) {
+          // $(data.geojson).each(function(key, item) {
+            district_boundary
+              .addData(data.geojson)
+              .setStyle({
+                fillColor: 'rgba(87, 37, 125, 0.26)',
+                color: 'rgba(87, 37, 125, 0.8)'
+              });
+            // if (!params.zipcode || params.zipcode === '') {
+
+            // }
+          // });
+          console.log(district_boundary);
+          mapManager.getMap()
+            .fitBounds(district_boundary.getBounds(), { animate: false });
+          district_boundary.bringToBack();
+        }
+      }).error(function() {});
     }
   });
 

@@ -7,6 +7,8 @@ $teal: #40D7D4;
 $aqua: #0beede;
 $beige: #F6ECCA;
 
+$purple: #57257D;
+
 // @mixin klima {
 //   font-family: 'KlimaWeb', -apple-system, BlinkMacSystemFont, 'arial', sans-serif;
 // }
@@ -76,11 +78,11 @@ $font-secondary: monospace, sans-serif;
       margin-bottom: 5px;
     }
     h2 {
-      font-family: Drone Ranger, sans-serif;
+      font-family: Verdana, sans-serif;
       font-size: 22px;
       a {
         color: $blue;
-        &:hover {color: $red; }
+        &:hover {color: $purple; }
       }
     }
   }

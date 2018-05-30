@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WomensMarch.com Map</title>
+  <title>Enough Map</title>
 
   <meta charset="utf-8" />
   <meta name='google-site-verification' content='' />
@@ -28,7 +28,9 @@
 
   <script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
-
+  <script>
+  window.EVENTS_URL = "https://d2hh11l1aj2kg1.cloudfront.net/data/wm-enough.js.gz"
+  </script>
   <!-- inject:css -->
   <!-- endinject -->
 </head>
@@ -45,161 +47,163 @@
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1682756452019911";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
+  <main>
+    <div id='stage'>
+      <div id='title-area'>
+        <div id='title-container'>
+          <div class='title-item'>
+            <a href='//www.womensmarch.com/enough' target='_blank'>
+              <img src='/img/logo.png' height="80px"/>
+            </a>
+          <span id='page-title'>Find Events Near You!</span>
+        </div>
+        </div>
+      </div>
+      <div id='activity-area'>
+        <section id='map'>
+        </section>
+        <section id='events-list-container'>
 
-  <div id='stage'>
-    <div id='title-area'>
-      <div id='title-container'>
-        <div class='title-item'><a href='http://powertothepolls.com/anniversary' target='_blank'>Power to the Polls Events</a></div>
-        <nav>
+          <header class='page-header'>
+            <nav>
+              <div class='filters-form-area'>
+                <form id="filters-form">
+                  <input type='hidden' name='lang' value='en'/>
+                  <div class='row'>
+                    <div class='col-md-12 input-text search-wrapper'>
+                      <input type="text"
+                            class="form-control typeahead"
+                            name='loc'
+                            placeholder="City, State, or Country"
+                            data-provider="typeahead"
+                            autocomplete="off"
+                        >
+                      <input type='hidden' name='key' />
+                      <input type='hidden' name='lng' />
+                      <input type='hidden' name='lat' />
+                      <input type='hidden' name='bound1' />
+                      <input type='hidden' name='bound2' />
+                      <div class='search-button'>
+                        <button
+                          class='btn btn-tertiary'
+                        >Search</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='row'>
+                    <div class='col-md-12 show-hide-buttons'>
 
-        </nav>
+                      <button class="btn btn-primary" id="show-list">
+                        <span class="show-list"><i class="fa fa-list" aria-hidden="true"></i> List View</span>
+                      </button>
+
+                      <button class="btn btn-primary" id="show-map">
+                        <span class="show-map"><i class="fa fa-map-marker" aria-hidden="true"></i> Map View</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row" style="display: none;">
+                    <div class='col-md-12 filter-area'>
+                      <div class='filter-container'>
+                        <span class='filter-item'>
+                          <input type='checkbox' name='filter[]' id='events' value='events' checked/>
+                          <label for='events'
+                              data-lang-target='text'
+                              data-lang-key='show-events'
+                          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        </span>
+                        <span class='filter-item'>
+                          <input type='checkbox' name='filter[]' id='groups' value='groups' checked/>
+                          <label for='groups'
+                          data-lang-target='text'
+                          data-lang-key='show-groups'
+                          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        </span>
+                      </div>
+
+                      <button class='btn btn-primary' id="show-hide-map">
+                        <span class='show-map' data-lang-target='text'
+                        data-lang-key='map-view'></span>
+                        <span class='show-list' data-lang-target='text'
+                        data-lang-key='list-view'></span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </nav>
+          </header>
+
+          <div id='events-list'>
+            <!-- <a href='https://actionnetwork.org/events/new?event_campaign_id=4659' class='btn btn-tertiary'>Host an Event</a> -->
+            <ul>
+              <li>
+                <div class='type-event'>
+                  <ul class='event-types-list'>
+                    <li>Event Type 1</li>
+                    <li>Event Type 2</li>
+                  </ul>
+                  <h2><a href='/'>Action 1</a></h2>
+                  <h4>Friday &bull; October 27, 2017</h4>
+                  <div class='address-area'>
+                    <p>Location Name</p>
+                    <p>1234 Address Lane</p>
+                    <p>Denver, CO 80219</p>
+                  </div>
+                  <div class='call-to-action'>
+                    <a href='#' class='btn btn-primary'>RSVP</a>
+                  </div>
+                </div>
+              </li>
+              <!-- Type Events -->
+              <li>
+                <div class='type-event'>
+                  <ul class='event-types-list'>
+                    <li>Event Type 1</li>
+                    <li>Event Type 2</li>
+                  </ul>
+                  <h2><a href='/'>Action 2</a></h2>
+                  <h4>Friday &bull; October 27, 2017</h4>
+                  <div class='address-area'>
+                    <p>Location Name</p>
+                    <p>1234 Address Lane</p>
+                    <p>Denver, CO 80219</p>
+                  </div>
+                  <div class='call-to-action'>
+                    <a href='#' class='btn btn-primary'>RSVP</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!--aside id='embed-area'>
+            <button class='btn more-items'>
+              <i class="fa fa-chevron-up" aria-hidden="true"></i>
+            </button>
+            <div class='viewport'>
+              <div class='content'>
+                <h4>Embed this map</h4>
+                <p>Click the clipboard to copy</p>
+                <div id='embed-form'>
+                  <input type='text' name='embed'/>
+                  <button class='btn btn-info'><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+                </div>
+              </div>
+            </div>
+          </aside -->
+        </section>
       </div>
     </div>
-    <div id='activity-area'>
-      <section id='map'>
-      </section>
-      <section id='events-list-container'>
-
-        <header class='page-header'>
-          <nav>
-            <div class='filters-form-area'>
-              <form id="filters-form">
-                <input type='hidden' name='lang' value='en'/>
-                <div class='row'>
-                  <div class='col-md-12 input-text search-wrapper'>
-                    <input type="text"
-                          class="form-control typeahead"
-                          name='loc'
-                          placeholder="City, State, or Country"
-                          data-provider="typeahead"
-                          autocomplete="off"
-                      >
-                    <input type='hidden' name='key' />
-                    <input type='hidden' name='lng' />
-                    <input type='hidden' name='lat' />
-                    <input type='hidden' name='bound1' />
-                    <input type='hidden' name='bound2' />
-                    <div class='search-button'>
-                      <button
-                        class='btn btn-tertiary'
-                      >Search</button>
-                    </div>
-                  </div>
-                </div>
-                <div class='row'>
-                  <div class='col-md-12 show-hide-buttons'>
-
-                    <button class="btn btn-primary" id="show-list">
-                      <span class="show-list"><i class="fa fa-list" aria-hidden="true"></i> List View</span>
-                    </button>
-
-                    <button class="btn btn-primary" id="show-map">
-                      <span class="show-map"><i class="fa fa-map-marker" aria-hidden="true"></i> Map View</span>
-                    </button>
-                  </div>
-                </div>
-                <div class="row" style="display: none;">
-                  <div class='col-md-12 filter-area'>
-                    <div class='filter-container'>
-                      <span class='filter-item'>
-                        <input type='checkbox' name='filter[]' id='events' value='events' checked/>
-                        <label for='events'
-                            data-lang-target='text'
-                            data-lang-key='show-events'
-                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                      </span>
-                      <span class='filter-item'>
-                        <input type='checkbox' name='filter[]' id='groups' value='groups' checked/>
-                        <label for='groups'
-                        data-lang-target='text'
-                        data-lang-key='show-groups'
-                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                      </span>
-                    </div>
-
-                    <button class='btn btn-primary' id="show-hide-map">
-                      <span class='show-map' data-lang-target='text'
-                      data-lang-key='map-view'></span>
-                      <span class='show-list' data-lang-target='text'
-                      data-lang-key='list-view'></span>
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </nav>
-        </header>
-
-        <div id='events-list'>
-          <ul>
-            <li>
-              <div class='type-event'>
-                <ul class='event-types-list'>
-                  <li>Event Type 1</li>
-                  <li>Event Type 2</li>
-                </ul>
-                <h2><a href='/'>Action 1</a></h2>
-                <h4>Friday &bull; October 27, 2017</h4>
-                <div class='address-area'>
-                  <p>Location Name</p>
-                  <p>1234 Address Lane</p>
-                  <p>Denver, CO 80219</p>
-                </div>
-                <div class='call-to-action'>
-                  <a href='#' class='btn btn-primary'>RSVP</a>
-                </div>
-              </div>
-            </li>
-            <!-- Type Events -->
-            <li>
-              <div class='type-event'>
-                <ul class='event-types-list'>
-                  <li>Event Type 1</li>
-                  <li>Event Type 2</li>
-                </ul>
-                <h2><a href='/'>Action 2</a></h2>
-                <h4>Friday &bull; October 27, 2017</h4>
-                <div class='address-area'>
-                  <p>Location Name</p>
-                  <p>1234 Address Lane</p>
-                  <p>Denver, CO 80219</p>
-                </div>
-                <div class='call-to-action'>
-                  <a href='#' class='btn btn-primary'>RSVP</a>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!--aside id='embed-area'>
-          <button class='btn more-items'>
-            <i class="fa fa-chevron-up" aria-hidden="true"></i>
-          </button>
-          <div class='viewport'>
-            <div class='content'>
-              <h4>Embed this map</h4>
-              <p>Click the clipboard to copy</p>
-              <div id='embed-form'>
-                <input type='text' name='embed'/>
-                <button class='btn btn-info'><i class="fa fa-clipboard" aria-hidden="true"></i></button>
-              </div>
-            </div>
-          </div>
-        </aside -->
-      </section>
-    </div>
-  </div>
+  </main>
 
   <!-- inject:js -->
   <!-- endinject -->
 
   <script type='text/javascript' src=''></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  <!-- script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLlxWn3yInmPEUT4zPV9PBX7n5ZkHxKvM&callback=window.initializeAutocompleteCallback"
-    async defer></script -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC2NuGE75jrukj3dtGRJ2TEGDfKdeA18Q&callback=window.initializeAutocompleteCallback" async defer></script>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLv_aHYN7rW5rR5jc9WQ5mbYU1oB-xd9c&callback=window.initializeAutocompleteCallback"
-    async defer></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLv_aHYN7rW5rR5jc9WQ5mbYU1oB-xd9c&callback=window.initializeAutocompleteCallback" async defer></script> -->
 <!-- SOCIAL -->
 <!-- Twitter -->
 <script>window.twttr = (function(d, s, id) {

@@ -19,13 +19,19 @@ a {
   }
 }
 
+#page-title {
+  text-align: right;
+  float: right;
+  margin-top: 20px;
+}
 #events-count {
+  color: white;
   display: inline-block;
   float: right;
   margin-top: 20px;
   opacity: 0;
   transition: opacity 0.4s;
-  font-family: 'Drone Ranger', sans-serif;
+  font-family: Verdana, sans-serif;
 
   @media(max-width: 600px) {
     display: none;
@@ -56,7 +62,7 @@ a {
   }
 }
 .btn.btn-secondary {
-  // background-color:transparent;
+  background-color:transparent;
   // border-style:solid;
   border: 1px solid;
   border-radius: 3px;
@@ -65,14 +71,14 @@ a {
   font-family: Open sans, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  color: $blue;
-  border-color: $blue;
+  color: $purple;
+  border-color: $purple;
   font-size: 12px;
 
   &:hover {
     border-color: transparent;
-    background-color: $red;
-    color: $beige;
+    background-color: $purple;
+    color: white;
   }
 }
 
@@ -139,9 +145,9 @@ a {
 
 
 .btn.btn-tertiary {
-  background-color: $blue;
-  border-color: $blue;
-  color: $beige;
+  background-color: $purple;
+  border-color: $purple;
+  color: white;
   font-family: Open Sans, sans-serif;
   font-weight: 700;
 
@@ -165,7 +171,7 @@ a {
   @import 'components/header';
 
   div#title-area {
-    background-color: $beige;
+    background-color: $purple;
     // display: flex;
 
 
@@ -174,10 +180,10 @@ a {
         flex-direction: row;
     }
     div.title-item {
-      font-family: Drone Ranger, sans-serif;
+      font-family: Verdana, sans-serif;
       font-size: 31px;
       padding: 10px 10px 10px;
-      color: #213444;
+      color: white;
       flex-grow: 1;
       box-shadow: -3px 5px 6px rgba(0,0,0,0.1);
       z-index: 10;
@@ -216,7 +222,7 @@ a {
     #events-list-container  {
       #events-list {
 
-        background-color: $beige;
+        background-color: whitesmoke;
 
         ul li { display: none; }
 
