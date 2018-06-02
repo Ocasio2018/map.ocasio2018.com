@@ -7,7 +7,8 @@ $teal: #40D7D4;
 $aqua: #0beede;
 $beige: #F6ECCA;
 
-$purple: #57257D;
+$purple: #3c2e81;
+$neg-purple: #c4c1d9;
 
 // @mixin klima {
 //   font-family: 'KlimaWeb', -apple-system, BlinkMacSystemFont, 'arial', sans-serif;
@@ -34,7 +35,7 @@ $font-secondary: monospace, sans-serif;
 
   h2 {
     // @include klima;
-    font-family: Roboto, sans-serif;
+    font-family: Montserrat, sans-serif;
     text-transform: uppercase;
     margin-bottom: 0;
     line-height: 1.2;
@@ -78,7 +79,7 @@ $font-secondary: monospace, sans-serif;
       margin-bottom: 5px;
     }
     h2 {
-      font-family: Roboto, sans-serif;
+      font-family: Montserrat, sans-serif;
       font-size: 22px;
       a {
         color: $blue;

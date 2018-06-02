@@ -124,7 +124,7 @@ const MapManager = (($) => {
 
     if (!L.Browser.mobile) {
       map = L.map('map', { dragging: !L.Browser.mobile }).setView(window.CUSTOM_COORD || [38.4114271,-97.6411044], window.CUSTOM_ZOOM || 4);
-      map.scrollWheelZoom.disable();
+      // map.scrollWheelZoom.disable();
     } else {
       map = L.map('map', { dragging: !L.Browser.mobile }).setView(window.CUSTOM_COORD || [38.4114271,-97.6411044], 3);
     }
@@ -239,7 +239,7 @@ https://docs.google.com/document/d/1KWkLNNeIOeFEiVWMNwoYKu1yAZRUDf78xIbI1ie7Dvs/
               const eventType = feature.properties.eventProperties.event_type;
               var geojsonMarkerOptions = {
                   radius: 6,
-                  fillColor:  eventType && eventType.toLowerCase() === 'group' ? "#40D7D4" : "#572582",
+                  fillColor:  eventType && eventType.toLowerCase() === 'group' ? "#3c2e81" : "#3c2e81",
                   color: "white",
                   weight: 4,
                   opacity: 0.5,

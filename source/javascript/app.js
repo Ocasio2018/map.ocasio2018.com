@@ -189,9 +189,8 @@ let mapManager;
 
   // 7. present group elements
 
-  // console.log(window.EVENTS_URL || 'https://d2hh11l1aj2kg1.cloudfront.net/data/womensmarch.js.gz');
   $.ajax({
-    url: 'http://map.justicedemocrats.com/api/events?candidate=alexandria-ocasio-cortez', //'|**DATA_SOURCE**|',
+    url: 'https://map.justicedemocrats.com/api/events?candidate=alexandria-ocasio-cortez', //'|**DATA_SOURCE**|',
     dataType: 'json',
     success: (data) => {
       // console.log(data);
@@ -247,8 +246,8 @@ let mapManager;
             district_boundary
               .addData(data.geojson)
               .setStyle({
-                fillColor: 'rgba(87, 37, 125, 0.26)',
-                color: 'rgba(87, 37, 125, 0.8)'
+                fillColor: 'rgba(60, 46, 129, 0.26)',
+                color: 'rgba(60, 46, 129, 0.8)'
               });
             // if (!params.zipcode || params.zipcode === '') {
 

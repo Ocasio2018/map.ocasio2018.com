@@ -1,7 +1,11 @@
+.leaflet-container {
+  font-family: Montserrat, sans-serif; }
+
 html body > main {
   height: 100vh;
   font-size: 16px;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  font-family: Montserrat, sans-serif; }
 
 ul, li {
   margin: 0;
@@ -17,7 +21,8 @@ a {
 #page-title {
   text-align: right;
   float: right;
-  margin-top: 20px; }
+  margin-top: 20px;
+  font-family: Roboto Slab, sans-serif; }
   @media (max-width: 600px) {
     #page-title {
       display: none; } }
@@ -29,13 +34,13 @@ a {
   margin-top: 20px;
   opacity: 0;
   transition: opacity 0.4s;
-  font-family: Roboto, sans-serif; }
+  font-family: Roboto Slab, sans-serif; }
   @media (max-width: 600px) {
     #events-count {
       display: none; } }
 
 .btn.btn-primary {
-  font-family: Roboto, sans-serif;
+  font-family: Roboto Slab, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 1px;
@@ -60,15 +65,15 @@ a {
   border-radius: 3px;
   padding: 5px 10px;
   background-color: transparent;
-  font-family: Roboto, sans-serif;
+  font-family: Roboto Slab, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  color: #57257D;
-  border-color: #57257D;
+  color: #3c2e81;
+  border-color: #3c2e81;
   font-size: 12px; }
   .btn.btn-secondary:hover {
     border-color: transparent;
-    background-color: #57257D;
+    background-color: #3c2e81;
     color: white; }
 
 .popup-item .event-date {
@@ -100,10 +105,10 @@ a {
       color: #333333 !important; }
 
 .btn.btn-tertiary {
-  background-color: #57257D;
-  border-color: #57257D;
-  color: white;
-  font-family: Roboto, sans-serif;
+  background-color: #3c2e81;
+  border-color: #3c2e81;
+  color: #c4c1d9;
+  font-family: Roboto Slab, sans-serif;
   font-weight: 700;
   font-size: 12px;
   padding: 9px 9px;
@@ -206,23 +211,23 @@ a {
           font-size: 25px;
           margin-top: 10px; }
   #stage div#title-area {
-    background-color: #57257D; }
+    background-color: #3c2e81; }
     #stage div#title-area div#title-container {
       display: flex;
       flex-direction: row; }
     #stage div#title-area div.title-item {
-      font-family: Roboto, sans-serif;
+      font-family: Montserrat, sans-serif;
       font-size: 31px;
       padding: 10px 10px 10px;
-      color: white;
+      color: #c4c1d9;
       flex-grow: 1;
       box-shadow: -3px 5px 6px rgba(0, 0, 0, 0.1);
       z-index: 10;
       overflow: hidden;
-      white-space: nowrap;
       text-overflow: ellipsis; }
       #stage div#title-area div.title-item a {
-        color: #223544; }
+        color: #223544;
+        display: inline-block; }
       #stage div#title-area div.title-item a:hover {
         color: #f1615c; }
     #stage div#title-area nav {
@@ -236,12 +241,17 @@ a {
     background-color: green;
     flex-grow: 1;
     position: relative;
-    display: flex; }
+    display: flex;
+    overflow: auto; }
     #stage div#activity-area section#map {
       flex-grow: 1;
       background-color: whitesmoke;
       font-size: 1rem;
       z-index: 0; }
+      #stage div#activity-area section#map .leaflet-container {
+        font-family: Montserrat, sans-serif; }
+      #stage div#activity-area section#map div.leaflet-popup .leaflet-container {
+        font-family: Montserrat, sans-serif; }
       #stage div#activity-area section#map div.leaflet-popup .leaflet-container a.leaflet-popup-close-button {
         top: 10px;
         right: 10px; }
@@ -272,7 +282,7 @@ a {
             padding: 2px 5px 0;
             font-size: 12px; }
         #stage div#activity-area section#map div.leaflet-popup div.leaflet-popup-content h2 {
-          font-family: Roboto, sans-serif;
+          font-family: Montserrat, sans-serif;
           text-transform: uppercase;
           margin-bottom: 0;
           line-height: 1.2;
@@ -309,12 +319,12 @@ a {
           z-index: 1;
           margin-bottom: 5px; }
         #stage div#activity-area section#map div.leaflet-popup div.leaflet-popup-content div.type-event h2 {
-          font-family: Roboto, sans-serif;
+          font-family: Montserrat, sans-serif;
           font-size: 22px; }
           #stage div#activity-area section#map div.leaflet-popup div.leaflet-popup-content div.type-event h2 a {
             color: #223544; }
             #stage div#activity-area section#map div.leaflet-popup div.leaflet-popup-content div.type-event h2 a:hover {
-              color: #57257D; }
+              color: #3c2e81; }
         #stage div#activity-area section#map div.leaflet-popup div.leaflet-popup-content div.type-group div.group-details-area {
           margin-bottom: 5px; }
         #stage div#activity-area section#map div.leaflet-popup div.leaflet-popup-content div.type-group h2:after {
@@ -394,7 +404,7 @@ a {
               padding: 2px 5px 0;
               font-size: 12px; }
           #stage div#activity-area section#events-list-container div#events-list > ul > li h2 {
-            font-family: Roboto, sans-serif;
+            font-family: Montserrat, sans-serif;
             text-transform: uppercase;
             margin-bottom: 0;
             line-height: 1.2;
@@ -431,12 +441,12 @@ a {
             z-index: 1;
             margin-bottom: 5px; }
           #stage div#activity-area section#events-list-container div#events-list > ul > li div.type-event h2 {
-            font-family: Roboto, sans-serif;
+            font-family: Montserrat, sans-serif;
             font-size: 22px; }
             #stage div#activity-area section#events-list-container div#events-list > ul > li div.type-event h2 a {
               color: #223544; }
               #stage div#activity-area section#events-list-container div#events-list > ul > li div.type-event h2 a:hover {
-                color: #57257D; }
+                color: #3c2e81; }
           #stage div#activity-area section#events-list-container div#events-list > ul > li div.type-group div.group-details-area {
             margin-bottom: 5px; }
           #stage div#activity-area section#events-list-container div#events-list > ul > li div.type-group h2:after {
