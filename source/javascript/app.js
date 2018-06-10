@@ -190,7 +190,7 @@ let mapManager;
   // 7. present group elements
 
   $.ajax({
-    url: 'https://map.justicedemocrats.com/api/events?candidate=alexandria-ocasio-cortez', //'|**DATA_SOURCE**|',
+    url: 'https://ocasio2018.com/api/events?candidate=alexandria-ocasio-cortez', //'|**DATA_SOURCE**|',
     dataType: 'json',
     success: (data) => {
       // console.log(data);
@@ -202,7 +202,7 @@ let mapManager;
             supergroup: "Ocasio for US Congress",
             start_datetime: item.start_date,
             tz: "EST",
-            venue: item.location.venue + [item.location.address_lines.join( ), item.location.locality, item.location.region, item.location.postal_code].join(" "),
+            venue: `<strong>${item.location.venue}. </strong>` + [item.location.address_lines.join( ), item.location.locality, item.location.region, item.location.postal_code].join(" "),
             lng: item.location.location.longitude,
             url: item.browser_url,
             title: item.title,
@@ -212,10 +212,11 @@ let mapManager;
 
       // $('#events-count').text(`${window.EVENTS_DATA.length} Walkouts and Counting`).css('opacity', 1);
 
-
+      targetData.sort((a, b) => new Date(a.start_datetime) - new Date(b.start_datetime));
       targetData.forEach((item) => {
         item['event_type'] = 'Action';
-      })
+      });
+
 
       $(document).trigger('trigger-list-update', { params: parameters, data: targetData });
       // $(document).trigger('trigger-list-filter-update', parameters);

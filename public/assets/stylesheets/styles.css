@@ -39,20 +39,23 @@ a {
     #events-count {
       display: none; } }
 
+.host-button {
+  margin-top: 10px; }
+
 .btn.btn-primary {
   font-family: Roboto Slab, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 1px;
   font-size: 19px;
-  background-color: #223544;
-  border-color: #223544;
+  background-color: #3c2e81;
+  border-color: #c4c1d9;
   border-width: 2px;
-  color: #F6ECCA;
+  color: #c4c1d9;
   font-weight: bold; }
   .btn.btn-primary:hover {
-    background-color: #F6ECCA;
-    color: #223544; }
+    background-color: #c4c1d9;
+    color: #3c2e81; }
   .btn.btn-primary .wm-icon {
     width: 20px;
     height: 20px;
@@ -225,11 +228,6 @@ a {
       z-index: 10;
       overflow: hidden;
       text-overflow: ellipsis; }
-      #stage div#title-area div.title-item a {
-        color: #223544;
-        display: inline-block; }
-      #stage div#title-area div.title-item a:hover {
-        color: #f1615c; }
     #stage div#title-area nav {
       width: 400px;
       text-align: right;

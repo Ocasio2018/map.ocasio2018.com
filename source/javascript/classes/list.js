@@ -67,41 +67,41 @@ const ListManager = (($) => {
         // const bounds = [p.bounds1, p.bounds2];
 
 
-        // $target.find('ul li.event-obj, ul li.group-obj').each((ind, item)=> {
-        //
-        //   let _lat = $(item).data('lat'),
-        //       _lng = $(item).data('lng');
-        //
-        //   // console.log("updateBounds", item)
-        //   if (bound1[0] <= _lat && bound2[0] >= _lat && bound1[1] <= _lng && bound2[1] >= _lng) {
-        //     // console.log("Adding bounds");
-        //     $(item).addClass('within-bound');
-        //   } else {
-        //     $(item).removeClass('within-bound');
-        //   }
-        // });
+        $target.find('ul li.event-obj, ul li.group-obj').each((ind, item)=> {
+
+          let _lat = $(item).data('lat'),
+              _lng = $(item).data('lng');
+
+          // console.log("updateBounds", item)
+          if (bound1[0] <= _lat && bound2[0] >= _lat && bound1[1] <= _lng && bound2[1] >= _lng) {
+            // console.log("Adding bounds");
+            $(item).addClass('within-bound');
+          } else {
+            $(item).removeClass('within-bound');
+          }
+        });
         // $(item).addClass('within-bound');
 
         // Orders the set to nearest
-        let latCenter = (bound1[0] + bound2[0]) / 2,
-            lngCenter = (bound1[1] + bound2[1]) / 2;
-        const sortList = (a, b) => {
-          let _latA = $(a).data('lat'),
-              _latB = $(b).data('lat'),
-              _lngA = $(a).data('lng'),
-              _lngB = $(b).data('lng');
-
-          let distA = Math.sqrt(Math.pow(latCenter - _latA, 2) + Math.pow(lngCenter - _lngA, 2)),
-              distB = Math.sqrt(Math.pow(latCenter - _latB, 2) + Math.pow(lngCenter - _lngB, 2));
-
-          $(a).attr('data-distance', distA);
-
-          return distA - distB;
-        };
-
-        $target.find('ul li.event-obj, ul li.group-obj')
-            .sort(sortList)
-            .appendTo($target.find('ul'));
+        // let latCenter = (bound1[0] + bound2[0]) / 2,
+        //     lngCenter = (bound1[1] + bound2[1]) / 2;
+        // const sortList = (a, b) => {
+        //   let _latA = $(a).data('lat'),
+        //       _latB = $(b).data('lat'),
+        //       _lngA = $(a).data('lng'),
+        //       _lngB = $(b).data('lng');
+        //
+        //   let distA = Math.sqrt(Math.pow(latCenter - _latA, 2) + Math.pow(lngCenter - _lngA, 2)),
+        //       distB = Math.sqrt(Math.pow(latCenter - _latB, 2) + Math.pow(lngCenter - _lngB, 2));
+        //
+        //   $(a).attr('data-distance', distA);
+        //
+        //   return distA - distB;
+        // };
+        //
+        // $target.find('ul li.event-obj, ul li.group-obj')
+        //     .sort(sortList)
+        //     .appendTo($target.find('ul'));
       },
       populateList: (hardFilters, targetData) => {
         //using window.EVENT_DATA

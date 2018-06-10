@@ -46,6 +46,9 @@ a {
     display: none;
   }
 }
+.host-button {
+  margin-top: 10px;
+}
 .btn.btn-primary {
   font-family: Roboto Slab, sans-serif;
   text-transform: uppercase;
@@ -53,14 +56,15 @@ a {
   letter-spacing: 1px;
   font-size: 19px;
 
-  background-color: $blue;
-  border-color:$blue;
+  background-color: $purple;
+  border-color: $neg-purple;
+
   border-width: 2px;
-  color: $beige;
+  color: $neg-purple;
   font-weight:bold;
   &:hover {
-    background-color: $beige;
-    color: $blue;
+    background-color: $neg-purple;
+    color: $purple;
   }
 
   .wm-icon {
@@ -202,8 +206,8 @@ a {
       // white-space: nowrap;
       text-overflow: ellipsis;
 
-      a { color: $blue; display: inline-block; }
-      a:hover { color: $red; }
+      // a { color: $blue; display: inline-block; }
+      // a:hover { color: $red; }
     }
     nav {
       width: 400px;
